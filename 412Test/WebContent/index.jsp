@@ -37,9 +37,9 @@
 
                    <select name="userlevel" id="userlevel">
                         <option value="">请选择用户级别</option>
-                        <option value="1"> <eq name="selectlevel" value="1">selected</eq> > 1星用户</option>
-                        <option value="2"> <eq name="selectlevel" value="2">selected</eq> >2星用户</option>
-                        <option value="3"> <eq name="selectlevel" value="3">selected</eq>>3星用户</option>
+                        <option value="1">1星用户</option>
+                        <option value="2">2星用户</option>
+                        <option value="3">3星用户</option>
                     </select>
                     <select name="usertype" id="usertype">
                         <option value="">请选择用户类型</option>
@@ -75,11 +75,11 @@
                                         </label>
                                     </th>
                                     <th>序号</th>
-                                    <th>登录账号</th>
-                                    <th>用户名/公司名</th>
-                                    <th>用户级别</th>
-                                    <th>用户类型</th>
-                                    <th>开发商/服务商</th>
+                                    <th>姓名</th>
+                                    <th>性别</th>
+                                    <th>毕业年份</th>
+                                    <th>专业</th>
+                                    <th>职业</th>
                                     <th>状态</th>
                                     <th>操作</th>
                                 </tr>

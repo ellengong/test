@@ -21,10 +21,10 @@
 
 						<li class="light-blue">
 							<a data-toggle="dropdown" href="javascript:;" class="dropdown-toggle">
-								<img class="nav-user-photo" src="__PUBLIC__/assets/img/header.jpg" alt="Jason's Photo" />
+								<img class="nav-user-photo" src="images/header.jpg" alt="Jason's Photo" />
 								<span class="user-info">
 									<small>你好</small>
-									{$Think.session.ADMIN.username}
+									${user}
 								</span>
 								<i class="icon-caret-down"></i>
 							</a>
