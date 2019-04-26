@@ -1,0 +1,4 @@
+
+修改主键为自增长
+
+ALTER TABLE `member` MODIFY COLUMN `member_id` int(11) NOT NULL AUTO_INCREMENT FIRST 

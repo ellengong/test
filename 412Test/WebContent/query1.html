@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Data collection</title>
+
+<link rel="stylesheet" href="dist/css/bootstrap.min.css">
+
+<script src="dist/js/bootstrap.min.js"></script>
+<style type="text/css">
+
+</style>
+
+</head>
+<body>
+	<h2 class="text-center btn-primary" style="height:64px;line-height:64px;margin:0px">文正学院校友信息采集</h2>
+	
+	
+		<div class="row">
+				<div class="col-xs-12">
+									<div class="table-responsive">
+									<!-- 此处为普通form表单 不能如s:form 表单直接将错误返回 -->
+										<form action="add" method="post" id="sub">
+											<table  class="form-group"
+												style="margin-left: 40%; border-collapse: separate; border-spacing: 20px;">
+												<tr>
+													<td ><label>产品编号:</label></td>
+													<td><input type="text" name="identity" placeholder="如:KBSXGKOAA0001" class="form-control" ></input></td>
+												</tr>
+												<tr>
+													<td>产品名称:</td>
+													<td><input type="text" name="name" placeholder="如:锡膏/红胶"></input></td>
+												</tr>
+												<tr>
+													<td>存储位置:</td>
+													<td><input type="text" name="location" placeholder="如:SMT仓库1区1号回温区"></input></td>
+												</tr>
+												<tr>
+													<td>回温时间:</td>
+													<td><input type="text" name="start" placeholder="如:2018-01-01 00:00:00"></input></td>
+												</tr>
+												<tr>
+													<td><input type="reset" value="重&nbsp置"></td>
+													<td><input type="button" value="添&nbsp加"
+														onclick="addproject()"></td>
+												</tr>
+											</table>
+										</form>
+									</div>
+									<!-- /.table-responsive -->
+								</div>
+								<!-- /span -->
+							</div>
+							<!-- /row -->
+							<div class="hr hr-18 dotted hr-double"></div>
+						</div>
+						<!-- /.col -->
+					</div>
+					<!-- /.row -->
+</body>
+</html>
