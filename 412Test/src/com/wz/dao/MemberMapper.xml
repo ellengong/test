@@ -5,13 +5,21 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.wz.dao.MemberMapper">
 
-<resultMap type="com.wz.pojo.Member" id="memberMap">
+	<resultMap type="com.wz.pojo.Member" id="memberMap">
 		<id property="id" column="id" />
-		<result property="userName" column="u_name" />
-		<result property="userTel" column="u_tel" />
+		<result property="name" column="name" />
+		<result property="phoneNumber" column="phone_number" />
+		<result property="phoneNumber" column="phone_number" />
+		<result property="gradYear" column="grad_year" />
+		<result property="major" column="major" />
+		<result property="company" column="company" />
+		<result property="job" column="job" />
+		
 	</resultMap>
 
-
+	<select id="selectAll"  resultMap="memberMap">
+		select * from member
+	</select>
     
     <insert id="addMember" parameterType="com.wz.pojo.Member" keyProperty="memberId" useGeneratedKeys="true">
 	insert into member(name,phone_number,grad_year,major,company,job) VALUES(#{name}, #{phoneNumber}, #{gradYear},#{major},#{company}, #{job})

@@ -36,24 +36,22 @@
                 <form action="" method="get" id="formuser" style="margin-left:20px;">
 
                    <select name="userlevel" id="userlevel">
-                        <option value="">请选择用户级别</option>
-                        <option value="1">1星用户</option>
-                        <option value="2">2星用户</option>
-                        <option value="3">3星用户</option>
+                        <option value="">请选择用户届别</option>
+                        <option value="1">2002</option>
+                        <option value="2">2003</option>
+                        <option value="3">2004</option>
                     </select>
                     <select name="usertype" id="usertype">
-                        <option value="">请选择用户类型</option>
-                        <option value="1">个人用户</option>
-                        <option value="2">企业用户</option>
-                        <option value="3">专家用户</option>
+                        <option value="">请选择用户专业</option>
+                        <option value="1">计算机</option>
+                        <option value="2">物联网</option>
+                        <option value="3">信息管理</option>
                     </select>
                     <select name="userstatus" id="userstatus">
                         <option value="">请选择用户状态</option>
                         <option value="0">0-未认证</option>
                         <option value="1">1-申请认证</option>
-                        <option value="2">2-认证通过</option>
-                        <option value="3">3-用户确认缴费</option>
-                        <option value="4">4-网站确认缴费</option>
+                        <option value="2">2-认证通过</option>                      
                         <option value="5">5-认证失败</option>
                         <option value="5">6-缴费失败</option>
                     </select>
@@ -137,20 +135,18 @@
                                             <switch name="user.status">
                                                  <case value="0">未认证</case>
                                                 <case value="1">申请认证</case>
-                                                <case value="2">认证通过</case>
-                                                <case value="3">用户确认缴费</case>
-                                                <case value="4">网站确认缴费</case>
+                                                <case value="2">认证通过</case>                                         
                                                 <case value="5">认证失败</case>
-                                                <case value="6">缴费失败</case>
+                                             
                                             </switch>
                                             </td>
                                             <td style="text-align:left;">
                                                 &nbsp;&nbsp;&nbsp;
                                                <a href="javascript:;" onclick="del_data('{:U('delete',array('id'=>$user['userid']))}')" class="btn btn-primary btn-xs icon-remove">
                                                     <i ></i>
-                                                   	 删除用户
+                                                   	 删除
                                                 </a>
-                                                <a href={:U('user/details',array('userid'=>$user['userid']))} class="btn btn-warning btn-xs icon-hand-right"> è®¤è¯å®¡æ ¸</a>
+                                                <a href="" class="btn btn-warning btn-xs icon-hand-right">详细</a>
                                             </td>
                                         </tr>
 

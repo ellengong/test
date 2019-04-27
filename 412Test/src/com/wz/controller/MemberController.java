@@ -25,7 +25,7 @@ public class MemberController {
 		request.setAttribute("list", listInfo);
 
 		ModelAndView mv = new ModelAndView();
-		mv.setViewName("memberinfo");
+		mv.setViewName("memberlist");
 
 		return mv;
 	}
