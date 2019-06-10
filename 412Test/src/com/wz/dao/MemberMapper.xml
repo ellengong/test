@@ -10,10 +10,16 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		<result property="name" column="name" />
 		<result property="phoneNumber" column="phone_number" />
 		<result property="phoneNumber" column="phone_number" />
-		<result property="gradYear" column="grad_year" />
+		<result property="enterYear" column="enter_year" />
 		<result property="major" column="major" />
 		<result property="company" column="company" />
 		<result property="job" column="job" />
+		<result property="hometown" column="hometown" />
+		<result property="gender" column="gender" />
+		<result property="qq" column="qq" />
+		<result property="weixin" column="weixin" />
+		<result property="birthday" column="birthday" />
+		<result property="stuNo" column="stu_no" />
 		
 	</resultMap>
 
@@ -22,7 +28,83 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</select>
     
     <insert id="addMember" parameterType="com.wz.pojo.Member" keyProperty="memberId" useGeneratedKeys="true">
-	insert into member(name,phone_number,grad_year,major,company,job) VALUES(#{name}, #{phoneNumber}, #{gradYear},#{major},#{company}, #{job})
+	 insert into member  
+	<trim prefix="(" suffix=")" suffixOverrides="," >
+  <if test="name != '' and name != null " >
+    name,
+  </if>
+  <if test="phoneNumber != '' " >
+    phone_number,
+  </if>
+  <if test="enterYear != 0" >
+    enter_year,
+  </if>
+  <if test="major != ''" >
+    major,
+  </if>
+  <if test="company != ''" >
+    company,
+  </if>
+  <if test="job != ''" >
+    job,
+  </if>
+  <if test="gender != ''" >
+    gender,
+  </if>
+  <if test="hometown != ''" >
+    hometown,
+  </if>
+  <if test="birthday != ''" >
+    birthday,
+  </if>
+  <if test="qq != ''" >
+    qq,
+  </if>
+  <if test="weixin != ''" >
+    weixin,
+  </if>
+  <if test="stuNo != ''" >
+    stu_no,
+  </if>
+</trim>
+<trim prefix="values (" suffix=")" suffixOverrides="," >
+  <if test="name != '' and name != null " >
+    #{name,jdbcType=VARCHAR},
+  </if>
+  <if test="phoneNumber != ''" >
+    #{phoneNumber,jdbcType=VARCHAR},
+  </if>
+  <if test="enterYear != 0" >
+    #{enterYear,jdbcType=INTEGER},
+  </if>
+  <if test="major != ''" >
+    #{major,jdbcType=VARCHAR},
+  </if>
+  <if test="company != ''" >
+    #{company,jdbcType=VARCHAR},
+  </if>
+  <if test="job != ''" >
+    #{job,jdbcType=VARCHAR},
+  </if>
+  <if test="gender != ''" >
+    #{gender,jdbcType=VARCHAR},
+  </if>
+  <if test="hometown != ''" >
+    #{hometown,jdbcType=VARCHAR},
+  </if>
+  <if test="birthday != ''" >
+    #{birthday,jdbcType=VARCHAR},
+  </if>
+  <if test="qq != ''" >
+    #{qq,jdbcType=VARCHAR},
+  </if>
+  <if test="weixin != ''" >
+    #{weixin,jdbcType=VARCHAR},
+  </if>
+  <if test="stuNo != ''" >
+    #{stuNo,jdbcType=VARCHAR},
+  </if>
+</trim>
 	</insert>
 
 </mapper>

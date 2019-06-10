@@ -38,7 +38,7 @@ public class MemberController {
 		ModelAndView mv = new ModelAndView();
 		try {			
 			boolean success = memberService.addMember(memInfo);
-
+			System.out.println("submit test:"+memInfo.getName());
 			if (success ) {
 				mv.setViewName("success");
 			} else {
@@ -47,6 +47,8 @@ public class MemberController {
 		} catch (Exception e) {
 			mv.setViewName("fail");
 			e.printStackTrace();
+			System.out.println("submit error:"+memInfo.getHometown());
+			System.out.println(e.getMessage());
 		}
 
 		return mv;

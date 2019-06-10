@@ -12,30 +12,31 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>success</title>
-<style>
-a {
-	text-decoration: none;
-	color: #373F51;
-}
-a:hover {
-	color: #E74B63;
-}
-</style>
-</head>
-<body>
+<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=yes">
 
-<span class="glyphicon glyphicon-chevron-left"><a href="secbypage.do?currPage=1">返回</a></span>
+<link rel="stylesheet" href="${pageScope.basePath}dist/css/bootstrap.min.css">
 <script type="text/javascript"
 	src="${pageScope.basePath}jquery/jquery.js"></script>
 <script type="text/javascript"
 	src="${pageScope.basePath}js/bootstrap.min.js"></script>
 <script type="text/javascript">
-        window.onload=function(){
-            alert("提交成功！");
-        }
+        //window.onload=function(){
+          //  alert("感谢您的信息填写，提交成功！");
+        //}
 </script>
 
+<title>信息提交成功</title>
 
+</head>
+<body>
+
+<form class="center-block" style="width: 360px;margin-top:30px" action="" method="post">
+
+<div class="form-group">
+			<img src="${pageScope.basePath}images/happy.png" class="img-rounded">
+			<h3> 信息提交成功！感谢您的参与!</h3>
+</div>
+
+</form>
 </body>
 </html>

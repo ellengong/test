@@ -3,23 +3,16 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" >
 <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=yes">
-<title>Data collection</title>
+<title>校友信息收集</title>
 
 <link rel="stylesheet" href="dist/css/bootstrap.min.css">
 
 <script src="dist/js/bootstrap.min.js"></script>
 <style type="text/css">
 
-/*.first-screen{
- 	 	
- 	background-image: url(images/school1.jpeg);
-            background-position: center center;
-            background-size: cover;
-            background-repeat: no-repeat;
-            min-width:1000px;
-            min-height:600px;
-            background-attachment:fixed;
- }*/
+.req{ color:red;
+  font-size:1.2em;}
+
 </style>
 
 </head>
@@ -28,49 +21,66 @@
 	<div class="container first-screen">
 	<form class="center-block" style="width: 360px;margin-top:30px" action="member/addMember.do" method="post">
 		<div class="form-group">
-			<label for="name">姓名</label> <input
-				type="text" class="form-control" id="name" name="name"
+			<label for="name">姓名<span class="req">&nbsp;*</span></label> 
+			<input 	type="text" class="form-control" id="name" name="name"
 				placeholder="姓名" required="required">
 		</div>
 		<div class="form-group">
-			<label for="phoneNumber">手机</label> <input
-				type="text" class="form-control" id="phoneNumber" name="phoneNumber"
-				placeholder="手机" required="required">
+			
+			<input type="radio" name="gender" value="男"  >男
+			<input type="radio" name="gender" value="女" style="margin-left:35px" >女
 		</div>
 		<div class="form-group">
-			<label for="gradYear">毕业年份</label> <input
-				type="number" class="form-control" id="gradYear" name="gradYear" min="2003" max="2019"
-				placeholder="2008" required="required">
+			  <label for="birthday">出生年月<span class="req">&nbsp;*</span></label> 
+			  <!--<input
+				type="text" class="form-control" id="birthday" name="birthday"
+				placeholder="出生年月：格式 1995-01" required="required">-->
+				<input type="month" class="form-control" name="birthday" required="required" >
 		</div>
 		<div class="form-group">
-			<label for="major">专业</label> <input
+			<label for="hometown">籍贯<span class="req">&nbsp;*</span></label> <input
+				type="text" class="form-control" id="hometown" name="hometown"
+				placeholder="如：江苏苏州" required="required">
+		</div>
+		<div class="form-group">
+			<label for="major">专业<span class="req">&nbsp;*</span></label> <input
 				type="text" class="form-control" id="major" name="major" 
 				placeholder="专业" required="required">
 		</div>
 		<div class="form-group">
-			
-			<input type="radio" name="gender" value="male"  >男
-			<input type="radio" name="gender" value="female" style="margin-left:35px" >女
+			<label for="enterYear">入学年份<span class="req">&nbsp;*</span></label> <input
+				type="number" class="form-control" id="enterYear" name="enterYear" min="1999" max="2018"
+				placeholder="2008" required="required">
+		</div>
+		<div class="form-group">
+			<label for="stuNo">学号</label> <input
+				type="text" class="form-control" id="stuNo" name="stuNo" 
+				placeholder="请输入您的学号" >
+		</div>
+		<div class="form-group">
+			<label for="phoneNumber">手机<span class="req">&nbsp;*</span></label> <input
+				type="text" class="form-control" id="phoneNumber" name="phoneNumber"
+				placeholder="手机" required="required">
 		</div>
 		
-	<!--  	<div class="checkbox">
-			<label>专业</label>
-			<select name="major">
-				<option value="1">计算机</option>
-				<option value="2">会计</option>
-				<option value="3">工商管理</option>
-				<option value="4">机械</option>
-			</select>
-		</div> -->
 		<div class="form-group">
-			<label for="company">工作单位</label> <input
+			<label for="qq">QQ号<span class="req">&nbsp;*</span></label> <input
+				type="text" class="form-control" id="qq" name="qq"  required="required">
+		</div>
+		<div class="form-group">
+			<label for="weixin">微信号<span class="req">&nbsp;*</span></label> <input
+				type="text" class="form-control" id="weixin" name="weixin"  required="required">
+		</div>
+		
+		<div class="form-group">
+			<label for="company">工作单位<span class="req">&nbsp;*</span></label> <input
 				type="text" class="form-control" id="company" name="company"
 				placeholder="现工作单位" required="required">
 		</div>
 		<div class="form-group">
 			<label for="job">职务</label> <input
 				type="text" class="form-control" id="job" name="job"
-				placeholder="职务" required="required">
+				placeholder="职务" >
 		</div>
 		
 		<button type="submit"  class="btn btn-primary form-control">提交</button>
