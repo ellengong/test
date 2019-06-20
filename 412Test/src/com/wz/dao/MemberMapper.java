@@ -7,4 +7,9 @@ public interface MemberMapper {
 	List<Member> selectAll();
 	
 	int addMember(Member member);
+	
+	Integer countMember();
+	
+	List<Member> selectByPage(@Param("fp") int fromPosition, @Param("ps")  int pageSize);
+	
 }

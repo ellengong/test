@@ -36,6 +36,7 @@
 %>
 </head>
 <body>
+
 <jsp:include page="header.jsp"></jsp:include>
 
  <%@include file = "sideBar.jsp" %>
@@ -84,7 +85,7 @@
                                     <th>
                                         <label>
                                             <input type="checkbox" class="ace" id='check_all'/>
-                                            <span class="lbl">全选</span>
+                                            <span class="lbl">全选</span>
                                         </label>
                                     </th>
                                     <th>序号</th>
@@ -99,7 +100,7 @@
                                 </thead>
 
                                 <tfoot>
-                               
+                        
                                 <tr>
                                     <td colspan="16">
                                         <div class="modal-footer no-margin-top" id='ys'>
@@ -147,7 +148,7 @@
                                                     <i ></i>
                                                    	 删除
                                                 </a>
-                                                <a href="" class="btn btn-warning btn-xs icon-hand-right">详细</a>
+                                                <a href="?id=<%=listInfo.get(i).getMemberId() %>" class="btn btn-warning btn-xs icon-hand-right">详细</a>
                                             </td>
                                         </tr>
 
@@ -159,14 +160,35 @@
                                
                                 </tbody>
                             </table>
-                            
-                            <!--分页条-->
-                            <ul class="pagination">
-                                <li><a href="index?page=1">&laquo;</a></li>
-                                <volist name="pagers" id="pager">
-                                    <li><a href="index?page={$pager}">{$pager}</a></li>
-                                </volist>
-                                <li><a href="index?page={$pageCount}">&raquo;</a></li>
+         <%
+			int pages = 0;
+			// 短路操作
+			if (null != listInfo && listInfo.size() > 0) {
+				pages = listInfo.get(0).getPages();
+			}
+
+			String cp = (String) session.getAttribute("currpage");
+			int currPage=1;
+			if(null !=cp && ! cp.isEmpty() ){
+				currPage = Integer.parseInt(cp);
+			}
+			
+			// ?:三目运算符  boolean?a:b  boolean=true=>a boolean=false=>b
+		%>
+                <!--分页条-->
+        <ul class="pagination">
+               <li><a href="index.do?currPage=1">&laquo;</a></li>
+                              
+                              <%
+								for (int i = 1; i <= pages; i++) {
+							  %>
+                                
+                               <li><a href="index.do?currPage=<%=i%>"></a><%=i%></li>
+                                
+                              <%
+								}
+							 %>
+                                <li><a href="index.do?currPage={$pageCount}">&raquo;</a></li>
 
                             </ul>
                         </form>

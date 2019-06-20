@@ -107,4 +107,12 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 </trim>
 	</insert>
 
+
+<select id="countMember" resultType="java.lang.Integer">
+select count(member_id) from member;
+</select>
+
+<select id="selectByPage" resultMap="memberMap">
+select * from member limit #{fp},#{ps};
+</select>
 </mapper>

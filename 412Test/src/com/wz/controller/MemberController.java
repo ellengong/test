@@ -23,7 +23,7 @@ public class MemberController {
 		List<Member> listInfo = memberService.selectAll();
 		
 		request.setAttribute("list", listInfo);
-
+		session.setAttribute("currpage", 1 + "");
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("memberlist");
 
@@ -50,6 +50,21 @@ public class MemberController {
 			System.out.println("submit error:"+memInfo.getHometown());
 			System.out.println(e.getMessage());
 		}
+
+		return mv;
+	}
+	
+	@RequestMapping(value = "index")
+	public ModelAndView selectMemByPage(int currPage, HttpSession session, HttpServletRequest request) {
+
+		List<Member> list = memberService.selectByPage(10 * (currPage - 1), 10);
+
+		request.setAttribute("list", list);
+		session.setAttribute("currpage", currPage + "");
+
+		ModelAndView mv = new ModelAndView();
+
+		mv.setViewName("memberlist");
 
 		return mv;
 	}

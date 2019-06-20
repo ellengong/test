@@ -31,6 +31,32 @@ public class MemberServiceImpl implements IMemberService {
 	public List<Member> selectAll(){
 		return memberMapper.selectAll();
 	}
+	
+	@Override
+	public int countPages(int singlePage) {
+		int countMemb = memberMapper.countMember();
+		int yushu = countMemb%singlePage;
+		if(yushu > 0) {
+			 return countMemb/singlePage + 1;
+		} else {
+			return countMemb/singlePage;
+		}
+	}
+
+	@Override
+	public List<Member> selectByPage(int fromPosition, int pageSize) {
+		
+		List<Member> list = memberMapper.selectByPage(fromPosition, pageSize);
+		int countPages = countPages(10);
+		
+		if(null != list && list.size() > 0) {
+			// 将总页数保存到list第一个元素的pages属性中
+			list.get(0).setPages(countPages);
+		}
+		
+		
+		return list;
+	}
 }
 
 

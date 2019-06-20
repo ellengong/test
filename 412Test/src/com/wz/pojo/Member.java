@@ -15,7 +15,7 @@ public class Member {
 	private String qq;
 	private String weixin;
 	private String stuNo;
-	
+	private int pages;
 	
 	public String getName()
 	{
@@ -136,5 +136,12 @@ public class Member {
 	
 	public void setHometown(String ht){
 		hometown=ht;
+	}
+	
+	public int getPages() {
+		return pages;
+	}
+	public void setPages(int pages) {
+		this.pages = pages;
 	}
 }
