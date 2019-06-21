@@ -99,17 +99,7 @@
                                 </tr>
                                 </thead>
 
-                                <tfoot>
-                        
-                                <tr>
-                                    <td colspan="16">
-                                        <div class="modal-footer no-margin-top" id='ys'>
-                                            {$page}
-                                        </div>
-                                        <div class="clear"></div>
-                                    </td>
-                                </tr>
-                                </tfoot>
+                                
 
                                 <tbody>
                                 
@@ -159,8 +149,13 @@
                                 <% } %>
                                
                                 </tbody>
-                            </table>
-         <%
+                                
+                                <tfoot>
+                        
+                                <tr>
+                                    <td colspan="16">
+                                        <div class="modal-footer no-margin-top" id='ys'>
+                                               <%
 			int pages = 0;
 			// 短路操作
 			if (null != listInfo && listInfo.size() > 0) {
@@ -175,7 +170,36 @@
 			
 			// ?:三目运算符  boolean?a:b  boolean=true=>a boolean=false=>b
 		%>
-                <!--分页条-->
+		
+		<div class="text-right" style="padding-top: 0px">
+			<nav aria-label="Page navigation">
+			<ul class="pagination" id="ulinfo">
+				<li value="0"><a
+					href="<%if (currPage > 1) {%>index.do?currPage=<%=currPage - 1%><%} else {%>#<%}%>"
+					aria-label="Previous"> <span aria-hidden="true">&laquo;</span>
+				</a></li>
+				<%
+					for (int i = 1; i <= pages; i++) {
+				%>
+				<li  <%if(i==currPage) {%>class="active"<%} %>><a href="index.do?currPage=<%=i%>"><%=i%></a></li>
+				<%
+					}
+				%>
+				<li value="<%=pages+1 %>" ><a
+					href="<%if (currPage < pages && currPage > 0) {%>index.do?currPage=<%=currPage + 1%><%} else {%>#<%}%>"
+					aria-label="Next"> <span aria-hidden="true">&raquo;</span>
+				</a></li>
+			</ul>
+			</nav>
+		</div>
+                                        </div>
+                                        <div class="clear"></div>
+                                    </td>
+                                </tr>
+                                </tfoot>
+                            </table>
+      
+                <!--分页条
         <ul class="pagination">
                <li><a href="index.do?currPage=1">&laquo;</a></li>
                               
@@ -190,7 +214,7 @@
 							 %>
                                 <li><a href="index.do?currPage={$pageCount}">&raquo;</a></li>
 
-                            </ul>
+                            </ul>-->
                         </form>
                     </div>
 
