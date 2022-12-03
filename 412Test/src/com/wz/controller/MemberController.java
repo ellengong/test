@@ -27,7 +27,8 @@ public class MemberController {
 		request.setAttribute("list", listInfo);
 		session.setAttribute("currpage", 1 + "");
 		ModelAndView mv = new ModelAndView();
-		mv.setViewName("memberlist");*/
+		mv.setViewName("memberlist");
+		*/
 
 		return "data:hello";
 	}
