@@ -6,6 +6,7 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 import java.util.List;
 
@@ -19,15 +20,16 @@ public class MemberController {
 	IMemberService memberService;
 	
 	@RequestMapping(value = "showall")
-	public ModelAndView showAll(HttpSession session, HttpServletRequest request) {
-		List<Member> listInfo = memberService.selectAll();
+	@ResponseBody
+	public String showAll(HttpSession session, HttpServletRequest request) {
+		/*List<Member> listInfo = memberService.selectAll();
 		
 		request.setAttribute("list", listInfo);
 		session.setAttribute("currpage", 1 + "");
 		ModelAndView mv = new ModelAndView();
-		mv.setViewName("memberlist");
+		mv.setViewName("memberlist");*/
 
-		return mv;
+		return "data:hello";
 	}
 
 	@RequestMapping(value = "addMember") 

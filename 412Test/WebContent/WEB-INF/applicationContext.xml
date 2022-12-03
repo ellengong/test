@@ -13,25 +13,26 @@
 	 ">
 
 	<aop:aspectj-autoproxy />
-
+	<!-- 数据库连接池 -->
 	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
 		<property name="driverClass" value="com.mysql.jdbc.Driver" />
 		<property name="jdbcUrl" value="jdbc:mysql://localhost:3306/xigao?useUnicode=true&amp;characterEncoding=UTF-8" /><!-- 修改 -->
 		<property name="user" value="root" />
-		<property name="password" value="" /><!-- 修改 -->
+		<property name="password" value="" />
 		
 	</bean>
-
+	<!-- 配置SqlSessionFactory对象 -->
 	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
 		<property name="dataSource" ref="dataSource" />
 		<property name="configLocation" value="classpath:mybatis-config.xml"></property>
 	</bean>
 
-
+	<!-- MapperScannerConfigurer扫描包下的mybatis的mapper接口，然后和mybatis的sqlxml映射文件产生代理对象，最后注入到springIoc容器里面 -->
 	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+		<!--mybatis-spring组件扫描器  给出需要扫描Dao接口包 -->
 		<property name="basePackage" value="com.wz.dao" /><!-- 修改 -->
 	</bean>
-
+	<!-- 配置基于注解的声明式事务 -->
 	<bean id="transactionManager"
 		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
 		<property name="dataSource" ref="dataSource"></property>

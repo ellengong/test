@@ -12,13 +12,16 @@
 		<welcome-file>default.htm</welcome-file>
 		<welcome-file>query.jsp</welcome-file>
 	</welcome-file-list>
+	<!-- 初始化springIOC容器 -->
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
 		<param-value>/WEB-INF/applicationContext.xml</param-value>
 	</context-param>
+	<!-- 启动spring容器 -->
 	<listener>
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 	</listener>
+	<!-- 配置 DispatcherServlet-->
 	<servlet>
 		<servlet-name>ds</servlet-name>
 		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
